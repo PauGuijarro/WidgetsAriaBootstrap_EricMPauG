@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pa de l'Àvia - Fleca Tradicional</title>
+    <title>Pa de l'Àvia - Productes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -97,63 +97,70 @@
             border-radius: 2px;
         }
 
-        /* Carrusel */
-        .carousel {
-            max-width: 900px;
-            margin: 0 auto;
+        /* Secció de productes */
+        .products-section {
+            padding: 2rem 0;
+        }
+
+        .product-card {
             background-color: var(--bread-light);
+            border: 1px solid var(--bread-border);
             border-radius: 10px;
-            overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2rem;
         }
 
-        .carousel-item img {
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
             object-fit: cover;
-            height: 500px;
-            border-radius: 10px;
-            transition: transform 0.5s ease;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
         }
 
-        .carousel-item img:hover {
-            transform: scale(1.03);
+        .product-card .card-body {
+            padding: 1.5rem;
+            text-align: center;
         }
 
-        .carousel-caption {
-            background: rgba(255, 247, 230, 0.9); /* Mateix color que el fons del formulari */
-            border-radius: 5px;
-            padding: 1rem;
-            color: var(--bread-brown);
-        }
-
-        .carousel-caption h5 {
+        .product-card h5 {
             font-family: 'Raleway', sans-serif;
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--bread-brown);
+            margin-bottom: 0.5rem;
         }
 
-        .carousel-caption p {
+        .product-card p {
             font-family: 'Quicksand', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            color: var(--bread-brown);
+            margin-bottom: 1rem;
+        }
+
+        .product-card .btn {
+            background-color: var(--bread-brown);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .product-card .btn:hover {
+            background-color: var(--bread-gold);
             color: var(--bread-brown);
         }
 
-        .carousel-control-prev, .carousel-control-next {
-            background: rgba(107, 63, 42, 0.5); /* Marró del botó */
-            width: 50px;
-            height: 50px;
-            top: 50%;
-            transform: translateY(-50%);
-            border-radius: 50%;
-            transition: background 0.3s;
-        }
-
-        .carousel-control-prev:hover, .carousel-control-next:hover {
-            background: var(--bread-gold);
-        }
-
-        /* Accessibilitat addicional */
-        .carousel-control-prev:focus, .carousel-control-next:focus {
+        .product-card .btn:focus {
             outline: 3px solid var(--bread-gold);
             outline-offset: 2px;
         }
@@ -163,17 +170,17 @@
     <!-- Nav Bar -->
     <nav class="navbar navbar-expand-lg" aria-label="Menú de Pa de l'Àvia">
         <div class="container">
-            <a class="navbar-brand" href="#">Pa de l'Àvia</a>
+            <a class="navbar-brand" href="index.html">Pa de l'Àvia</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#breadNav" 
                 aria-controls="breadNav" aria-expanded="false" aria-label="Mostra o amaga el menú de navegació">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="breadNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#inici">Inici</a></li>
-                    <li class="nav-item"><a class="nav-link" href="productes.html">Productes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#historia">Història</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contacte">Contacte</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inici</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="productes.html" aria-current="page">Productes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="historia.html">Història</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacte.html">Contacte</a></li>
                 </ul>
             </div>
         </div>
@@ -181,53 +188,57 @@
 
     <!-- Contingut principal -->
     <main class="container my-5">
-        <h1>El millor pa artesanal</h1>
+        <h1>Els nostres productes</h1>
 
-        <!-- Carousel (Widget) -->
-        <div id="breadCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" aria-roledescription="carrusel">
-            <div class="carousel-inner">
+        <!-- Secció de productes -->
+        <section class="products-section">
+            <div class="row">
                 <!-- Pa de pagès -->
-                <div class="carousel-item active">
-                    <img src="paPages.jpeg" class="d-block w-100" alt="Pa de pagès acabat de fer, amb crosta cruixent i molla tendra">
-                    <div class="carousel-caption">
-                        <h5>Pa de Pagès</h5>
-                        <p>El clàssic pa català, amb crosta cruixent i molla tendra.</p>
+                <div class="col-md-6 col-lg-3">
+                    <div class="product-card" role="article" aria-labelledby="pa-pages-title">
+                        <img src="paPages.jpeg" alt="Pa de pagès acabat de fer, amb crosta cruixent i molla tendra">
+                        <div class="card-body">
+                            <h5 id="pa-pages-title">Pa de Pagès</h5>
+                            <p>El clàssic pa català, amb crosta cruixent i molla tendra.</p>
+                            <a href="#pa-pages" class="btn" aria-label="Més informació sobre el Pa de Pagès">Més informació</a>
+                        </div>
                     </div>
                 </div>
                 <!-- Baguette -->
-                <div class="carousel-item">
-                    <img src="baguette.jpg" class="d-block w-100" alt="Baguette artesanal, daurada i cruixent">
-                    <div class="carousel-caption">
-                        <h5>Baguette</h5>
-                        <p>Una baguette artesanal, perfecta per a qualsevol àpat.</p>
+                <div class="col-md-6 col-lg-3">
+                    <div class="product-card" role="article" aria-labelledby="baguette-title">
+                        <img src="baguette.jpg" alt="Baguette artesanal, daurada i cruixent">
+                        <div class="card-body">
+                            <h5 id="baguette-title">Baguette</h5>
+                            <p>Una baguette artesanal, perfecta per a qualsevol àpat.</p>
+                            <a href="#baguette" class="btn" aria-label="Més informació sobre la Baguette">Més informació</a>
+                        </div>
                     </div>
                 </div>
                 <!-- Pa de llavors -->
-                <div class="carousel-item">
-                    <img src="paLlavors.jpg" class="d-block w-100" alt="Pa de llavors variades amb sèsam, lli i carbassa">
-                    <div class="carousel-caption">
-                        <h5>Pa de Llavors</h5>
-                        <p>Pa saludable amb llavors de sèsam, lli i carbassa.</p>
+                <div class="col-md-6 col-lg-3">
+                    <div class="product-card" role="article" aria-labelledby="pa-llavors-title">
+                        <img src="paLlavors.jpg" alt="Pa de llavors variades amb sèsam, lli i carbassa">
+                        <div class="card-body">
+                            <h5 id="pa-llavors-title">Pa de Llavors</h5>
+                            <p>Pa saludable amb llavors de sèsam, lli i carbassa.</p>
+                            <a href="#pa-llavors" class="btn" aria-label="Més informació sobre el Pa de Llavors">Més informació</a>
+                        </div>
                     </div>
                 </div>
                 <!-- Pa dolç -->
-                <div class="carousel-item">
-                    <img src="paDolc.png" class="d-block w-100" alt="Pa dolç amb panses i un toc de canyella">
-                    <div class="carousel-caption">
-                        <h5>Pa Dolç</h5>
-                        <p>Un pa dolç amb panses i un toc de canyella.</p>
+                <div class="col-md-6 col-lg-3">
+                    <div class="product-card" role="article" aria-labelledby="pa-dolc-title">
+                        <img src="paDolc.png" alt="Pa dolç amb panses i un toc de canyella">
+                        <div class="card-body">
+                            <h5 id="pa-dolc-title">Pa Dolç</h5>
+                            <p>Un pa dolç amb panses i un toc de canyella.</p>
+                            <a href="#pa-dolc" class="btn" aria-label="Més informació sobre el Pa Dolç">Més informació</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#breadCarousel" data-bs-slide="prev" aria-label="Diapositiva anterior">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#breadCarousel" data-bs-slide="next" aria-label="Diapositiva següent">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Següent</span>
-            </button>
-        </div>
+        </section>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
