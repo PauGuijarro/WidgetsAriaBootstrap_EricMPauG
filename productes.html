@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pa de l'Àvia - Productes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #f1e0c6; /* Tono cálido, similar al color del pan */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Barra de navegació */
+        .navbar-brand:hover,
+        .nav-link:hover {
+            color: #f4d03f !important; 
+        }
+
+        /* Títol principal */
+        .title-underline {
+            width: 80px;
+            height: 3px;
+            background: #f4d03f; 
+            border-radius: 2px;
+            margin: 0 auto;
+        }
+
+        /* Targetes de productes */
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body>
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg shadow-sm" style="background-color: #fff7e6; border-bottom: 2px solid #d1b8a3;" aria-label="Menú de Pa de l'Àvia">
+        <div class="container">
+            <a class="navbar-brand font-raleway fw-bold fs-3" href="index.html" style="color: #6b3f2a; font-family: 'Raleway', sans-serif;">Pa de l'Àvia</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#breadNav" 
+                aria-controls="breadNav" aria-expanded="false" aria-label="Mostra o amaga el menú de navegació">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="breadNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link fs-5" href="index.html" style="color: #6b3f2a;">Inici</a></li>
+                    <li class="nav-item"><a class="nav-link active fs-5 text-decoration-underline" href="productes.html" style="color: #6b3f2a;" aria-current="page">Productes</a></li>
+                    <li class="nav-item"><a class="nav-link fs-5" href="historia.html" style="color: #6b3f2a;">Història</a></li>
+                    <li class="nav-item"><a class="nav-link fs-5" href="contacte.html" style="color: #6b3f2a;">Contacte</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contingut principal -->
+    <main class="container my-5">
+        <h1 class="text-center font-raleway fw-bold fs-1" style="color: #6b3f2a; font-family: 'Raleway', sans-serif;">Els nostres productes</h1>
+        <div class="title-underline mt-2"></div>
+
+        <!-- Secció de productes -->
+        <section class="py-4">
+            <div class="row">
+                <!-- Pa de pagès -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="product-card card shadow-sm mb-4" style="background-color: #fff7e6; border: 1px solid #d1b8a3; border-radius: 10px;" role="article" aria-labelledby="pa-pages-title">
+                        <img src="paPages.jpeg" class="card-img-top rounded-top" style="height: 200px; object-fit: cover;" alt="Pa de pagès acabat de fer, amb crosta cruixent i molla tendra">
+                        <div class="card-body text-center">
+                            <h5 id="pa-pages-title" class="card-title font-raleway fw-bold fs-4" style="color: #6b3f2a; font-family: 'Raleway', sans-serif;">Pa de Pagès</h5>
+                            <p class="card-text" style="color: #6b3f2a;">El clàssic pa català, amb crosta cruixent i molla tendra.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Baguette -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="product-card card shadow-sm mb-4" style="background-color: #fff7e6; border: 1px solid #d1b8a3; border-radius: 10px;" role="article" aria-labelledby="baguette-title">
+                        <img src="baguette.jpg" class="card-img-top rounded-top" style="height: 200px; object-fit: cover;" alt="Baguette artesanal, daurada i cruixent">
+                        <div class="card-body text-center">
+                            <h5 id="baguette-title" class="card-title font-raleway fw-bold fs-4" style="color: #6b3f2a; font-family: 'Raleway', sans-serif;">Baguette</h5>
+                            <p class="card-text" style="color: #6b3f2a;">Una baguette artesanal, perfecta per a qualsevol àpat.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pa de llavors -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="product-card card shadow-sm mb-4" style="background-color: #fff7e6; border: 1px solid #d1b8a3; border-radius: 10px;" role="article" aria-labelledby="pa-llavors-title">
+                        <img src="paLlavors.jpg" class="card-img-top rounded-top" style="height: 200px; object-fit: cover;" alt="Pa de llavors variades amb sèsam, lli i carbassa">
+                        <div class="card-body text-center">
+                            <h5 id="pa-llavors-title" class="card-title font-raleway fw-bold fs-4" style="color: #6b3f2a; font-family: 'Raleway', sans-serif;">Pa de Llavors</h5>
+                            <p class="card-text" style="color: #6b3f2a;">Pa saludable amb llavors de sèsam, lli i carbassa.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pa dolç -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="product-card card shadow-sm mb-4" style="background-color: #fff7e6; border: 1px solid #d1b8a3; border-radius: 10px;" role="article" aria-labelledby="pa-dolc-title">
+                        <img src="paDolc.png" class="card-img-top rounded-top" style="height: 200px; object-fit: cover;" alt="Pa dolç amb panses i un toc de canyella">
+                        <div class="card-body text-center">
+                            <h5 id="pa-dolc-title" class="card-title font-raleway fw-bold fs-4" style="color: #6b3f2a; font-family: 'Raleway', sans-serif;">Pa Dolç</h5>
+                            <p class="card-text" style="color: #6b3f2a;">Un pa dolç amb panses i un toc de canyella.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
